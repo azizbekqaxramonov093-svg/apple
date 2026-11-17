@@ -1,0 +1,834 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #1d1d1f;
+  background: #fff;
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+  border: 0;
+  background: none;
+}
+
+/* NAVBAR */
+.navbar {
+  width: 100%;
+  height: 48px;
+  padding: 0 max(calc((100% - 1024px) / 2), 22px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+  background: rgba(250,250,252,.94);
+  backdrop-filter: blur(18px);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.apple-logo img {
+  display: block;
+  width: 17px;
+  height: 21px;
+  object-fit: contain;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex: 1;
+  gap: 19px;
+}
+
+.nav-links a {
+  font-size: 12px;
+  color: #252527;
+  white-space: nowrap;
+  transition: opacity .2s;
+}
+
+.nav-links a:hover,
+.nav-icons button:hover {
+  opacity: .55;
+}
+
+.nav-icons {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+}
+
+.nav-icons button {
+  font-size: 20px;
+  color: #222;
+}
+
+.mobile-menu-btn {
+  display: none;
+}
+
+/* MEGA MENU */
+.mega-menu {
+  position: fixed;
+  top: 48px;
+  left: 0;
+  width: 100%;
+  background: #fafafc;
+  z-index: 999;
+  padding: 42px 20px 55px;
+  display: none;
+  box-shadow: 0 20px 30px rgba(0,0,0,.08);
+}
+
+.mega-menu.open {
+  display: block;
+  animation: menuIn .25s ease;
+}
+
+@keyframes menuIn {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.mega-inner {
+  max-width: 1000px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr;
+  gap: 55px;
+}
+
+.mega-label,
+.suggestion-title {
+  color: #86868b;
+  font-size: 12px;
+  margin-bottom: 17px;
+}
+
+.mega-main,
+.mega-links {
+  display: flex;
+  flex-direction: column;
+}
+
+.mega-main {
+  gap: 9px;
+}
+
+.mega-main a {
+  font-size: 27px;
+  font-weight: 650;
+  letter-spacing: -.7px;
+}
+
+.mega-links {
+  gap: 12px;
+}
+
+.mega-links a {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.mega-main a:hover,
+.mega-links a:hover {
+  color: #06c;
+}
+
+/* SEARCH AND BAG */
+.utility-panel {
+  display: none;
+  position: fixed;
+  z-index: 1001;
+  top: 48px;
+  left: 0;
+  width: 100%;
+  padding: 35px max(calc((100% - 850px) / 2), 25px) 45px;
+  background: #fafafc;
+  box-shadow: 0 15px 30px rgba(0,0,0,.08);
+}
+
+.utility-panel.open {
+  display: block;
+}
+
+.utility-content {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.utility-content input {
+  flex: 1;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  font-size: 25px;
+  color: #1d1d1f;
+}
+
+.utility-content button,
+.close-panel {
+  font-size: 20px;
+}
+
+.suggestion-title {
+  margin-top: 30px;
+}
+
+.suggestions {
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+}
+
+.suggestions a {
+  font-size: 14px;
+}
+
+.bag-panel {
+  left: auto;
+  right: max(calc((100% - 1000px) / 2), 20px);
+  width: 330px;
+  padding: 35px;
+  border-radius: 0 0 15px 15px;
+}
+
+.bag-panel h3 {
+  font-size: 17px;
+  margin: 15px 0;
+}
+
+.bag-panel p {
+  font-size: 13px;
+  color: #6e6e73;
+  margin-top: 12px;
+}
+
+.bag-panel a {
+  color: #06c;
+}
+
+.close-panel {
+  float: right;
+}
+
+/* HERO SECTIONS */
+.hero {
+  height: 690px;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 12px;
+  background: #f5f5f7;
+  text-align: center;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  padding: 52px 20px 0;
+}
+
+.hero-content h1 {
+  font-size: clamp(38px,5vw,56px);
+  font-weight: 650;
+  letter-spacing: -2px;
+  line-height: 1.08;
+}
+
+.hero-content p {
+  font-size: 25px;
+  margin-top: 10px;
+  letter-spacing: -.4px;
+}
+
+.hero-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  margin-top: 20px;
+}
+
+.blue-button,
+.outline-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 25px;
+  padding: 10px 19px;
+  font-size: 16px;
+  transition: .2s ease;
+}
+
+.blue-button {
+  color: white;
+  background: #0071e3;
+  border: 1px solid #0071e3;
+}
+
+.blue-button:hover {
+  background: #0077ed;
+}
+
+.outline-button {
+  color: #06c;
+  border: 1px solid #06c;
+}
+
+.outline-button:hover {
+  background: #06c;
+  color: white;
+}
+
+.hero-image {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: 100%;
+  height: 77%;
+  object-fit: contain;
+  object-position: center bottom;
+}
+
+/* GIFTS — GREEN BACKGROUND */
+.gifts-hero {
+  height: 680px;
+  background: #c9e8cf;
+}
+
+.gifts-hero .hero-content {
+  padding-top: 54px;
+}
+
+.gifts-hero .hero-content h1 {
+  color: #1d1d1f;
+}
+
+.gifts-hero .hero-content p {
+  color: #333336;
+}
+
+.gifts-image {
+  height: 76%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* IPHONE DUO — LARGE APPLE-STYLE IMAGE */
+.duo-hero {
+  height: 690px;
+  background: #f5f5f7;
+}
+
+.duo-image {
+  width: 4000px;
+  max-width: none;
+  height: 4000px;
+  object-fit: contain;
+  object-position: center bottom;
+}
+
+/* IPHONE 18 PRO */
+.pro-hero {
+  background: #08090d;
+  color: white;
+  height: 690px;
+}
+
+.pro-image {
+  height: 77%;
+  object-fit: contain;
+}
+
+/* PRODUCT GRID */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(2,minmax(0,1fr));
+  gap: 12px;
+  padding: 0 12px;
+}
+
+.product-card {
+  position: relative;
+  height: 580px;
+  overflow: hidden;
+  background: #f5f5f7;
+  text-align: center;
+}
+
+.card-content {
+  position: relative;
+  z-index: 2;
+  padding: 43px 20px 0;
+}
+
+.card-content h2 {
+  font-size: 37px;
+  letter-spacing: -1.3px;
+  font-weight: 650;
+}
+
+.card-content p {
+  font-size: 18px;
+  margin-top: 8px;
+}
+
+.card-actions {
+  display: flex;
+  justify-content: center;
+  gap: 22px;
+  margin-top: 14px;
+}
+
+.card-actions a {
+  color: #06c;
+  font-size: 15px;
+}
+
+.card-actions a:hover {
+  text-decoration: underline;
+}
+
+.product-card img {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  height: 72%;
+  object-fit: contain;
+  object-position: center bottom;
+}
+
+.home-card,
+.ipad-card,
+.airpods-card,
+.upgrade-card,
+.card-card {
+  background: #f5f5f7;
+}
+
+.watch-card {
+  background: #f3f2ef;
+}
+
+/* ENTERTAINMENT CAROUSEL */
+.entertainment {
+  padding: 75px 0 65px;
+  text-align: center;
+  overflow: hidden;
+}
+
+.entertainment > h2 {
+  font-size: 38px;
+  letter-spacing: -1.2px;
+}
+
+.entertainment > p {
+  color: #6e6e73;
+  margin-top: 10px;
+  font-size: 16px;
+}
+
+.carousel-wrap {
+  position: relative;
+  margin-top: 35px;
+}
+
+.carousel-window {
+  width: 100%;
+  overflow: hidden;
+}
+
+.carousel-track {
+  display: flex;
+  gap: 16px;
+  padding: 0 7%;
+  transition: transform .6s cubic-bezier(.2,.7,.2,1);
+}
+
+.ent-card {
+  position: relative;
+  flex: 0 0 70%;
+  height: 390px;
+  overflow: hidden;
+  background: #222;
+  text-align: left;
+}
+
+.ent-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .6s ease;
+}
+
+.ent-card:hover img {
+  transform: scale(1.04);
+}
+
+.ent-overlay {
+  position: absolute;
+  inset: auto 0 0;
+  padding: 30px;
+  color: white;
+  background: linear-gradient(transparent,rgba(0,0,0,.72));
+}
+
+.ent-overlay span {
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.ent-overlay h3 {
+  font-size: 25px;
+  margin: 9px 0 13px;
+}
+
+.ent-overlay a {
+  display: inline-block;
+  font-size: 14px;
+  background: white;
+  color: #111;
+  border-radius: 20px;
+  padding: 8px 14px;
+}
+
+.carousel-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 5;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: rgba(230,230,235,.9);
+  color: #333;
+  font-size: 30px;
+  line-height: 1;
+}
+
+.carousel-arrow:hover {
+  background: #d5d5da;
+}
+
+.carousel-arrow.prev {
+  left: 20px;
+}
+
+.carousel-arrow.next {
+  right: 20px;
+}
+
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  gap: 9px;
+  margin-top: 23px;
+}
+
+.carousel-dots button {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #c6c6c8;
+}
+
+.carousel-dots button.active {
+  background: #333;
+}
+
+/* FOOTER */
+footer {
+  background: #f5f5f7;
+  padding: 25px max(calc((100% - 1000px) / 2),25px) 30px;
+  color: #6e6e73;
+}
+
+.footer-note {
+  border-bottom: 1px solid #d2d2d7;
+  padding-bottom: 20px;
+}
+
+.footer-note p {
+  font-size: 12px;
+  line-height: 1.6;
+  margin-bottom: 8px;
+}
+
+.footer-columns {
+  display: grid;
+  grid-template-columns: repeat(5,1fr);
+  gap: 25px;
+  padding: 25px 0 30px;
+}
+
+.footer-columns h4 {
+  font-size: 12px;
+  color: #1d1d1f;
+  margin-bottom: 13px;
+}
+
+.footer-columns a {
+  display: block;
+  font-size: 11px;
+  margin-bottom: 11px;
+}
+
+.footer-columns a:hover,
+.footer-bottom a:hover,
+.footer-legal a:hover {
+  text-decoration: underline;
+}
+
+.footer-bottom {
+  border-top: 1px solid #d2d2d7;
+  padding-top: 18px;
+  font-size: 11px;
+}
+
+.footer-bottom > p {
+  padding-bottom: 15px;
+  border-bottom: 1px solid #d2d2d7;
+}
+
+.footer-bottom a {
+  color: #06c;
+}
+
+.footer-legal {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  padding-top: 15px;
+}
+
+.footer-legal div {
+  display: flex;
+  gap: 18px;
+}
+
+.footer-legal a {
+  color: #6e6e73;
+}
+
+/* SCROLL REVEAL */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity .7s ease,transform .7s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* TABLET */
+@media (max-width: 900px) {
+  .navbar {
+    padding: 0 22px;
+  }
+
+  .nav-links {
+    gap: 12px;
+  }
+
+  .nav-links a {
+    font-size: 11px;
+  }
+
+  .hero {
+    height: 620px;
+  }
+
+  .product-card {
+    height: 500px;
+  }
+
+  .ent-card {
+    flex-basis: 82%;
+  }
+
+  .duo-image {
+    width: 125%;
+    height: 86%;
+  }
+}
+
+/* MOBILE */
+@media (max-width: 700px) {
+  .navbar {
+    height: 48px;
+  }
+
+  .mobile-menu-btn {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 48px;
+    left: 0;
+    width: 100%;
+    padding: 20px 28px 30px;
+    background: #fafafc;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+  }
+
+  .nav-links.mobile-open {
+    display: flex;
+  }
+
+  .nav-links a {
+    width: 100%;
+    padding: 13px 0;
+    font-size: 19px;
+    border-bottom: 1px solid #e5e5e7;
+  }
+
+  .nav-icons {
+    gap: 17px;
+  }
+
+  .mega-menu {
+    display: none !important;
+  }
+
+  .hero,
+  .gifts-hero,
+  .duo-hero,
+  .pro-hero {
+    height: 570px;
+  }
+
+  .hero-content {
+    padding-top: 42px;
+  }
+
+  .hero-content h1 {
+    font-size: 39px;
+  }
+
+  .hero-content p {
+    font-size: 19px;
+  }
+
+  .hero-image {
+    height: 65%;
+  }
+
+  .gifts-image {
+    height: 64%;
+  }
+
+  /* Duo image mobile size */
+  .duo-image {
+    width: 125%;
+    height: 82%;
+  }
+
+  .product-grid {
+    grid-template-columns: 1fr;
+    padding: 0 8px;
+    gap: 8px;
+  }
+
+  .product-card {
+    height: 520px;
+  }
+
+  .card-content h2 {
+    font-size: 31px;
+  }
+
+  .card-content p {
+    font-size: 16px;
+  }
+
+  .product-card img {
+    height: 68%;
+  }
+
+  .entertainment {
+    padding-top: 55px;
+  }
+
+  .entertainment > h2 {
+    font-size: 30px;
+  }
+
+  .ent-card {
+    flex-basis: 88%;
+    height: 300px;
+  }
+
+  .carousel-arrow {
+    width: 34px;
+    height: 34px;
+    font-size: 24px;
+  }
+
+  .carousel-arrow.prev {
+    left: 8px;
+  }
+
+  .carousel-arrow.next {
+    right: 8px;
+  }
+
+  .footer-columns {
+    grid-template-columns: repeat(2,1fr);
+    row-gap: 25px;
+  }
+
+  .footer-legal {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .footer-legal div {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: .01ms !important;
+  }
+}

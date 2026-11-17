@@ -1,0 +1,330 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Apple</title>
+  <link rel="stylesheet" href="./stayle.css">
+</head>
+<body>
+
+<header class="navbar">
+  <a class="apple-logo" href="#top">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Apple">
+  </a>
+
+  <nav class="nav-links" id="navLinks">
+    <a href="#store" data-menu="Store">Store</a>
+    <a href="#mac" data-menu="Mac">Mac</a>
+    <a href="#iphone" data-menu="iPhone">iPhone</a>
+    <a href="#ipad" data-menu="iPad">iPad</a>
+    <a href="#watch" data-menu="Watch">Watch</a>
+    <a href="#airpods" data-menu="AirPods">AirPods</a>
+    <a href="#tv" data-menu="TV & Home">TV & Home</a>
+    <a href="#entertainment" data-menu="Entertainment">Entertainment</a>
+    <a href="#accessories" data-menu="Accessories">Accessories</a>
+    <a href="#support" data-menu="Support">Support</a>
+  </nav>
+
+  <div class="nav-icons">
+    <button id="searchBtn" aria-label="Search">⌕</button>
+    <button id="bagBtn" aria-label="Shopping bag">▢</button>
+    <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menu">☰</button>
+  </div>
+</header>
+
+<div class="mega-menu" id="megaMenu">
+  <div class="mega-inner">
+    <div>
+      <p class="mega-label">Explore</p>
+      <div class="mega-main" id="megaMain"></div>
+    </div>
+    <div>
+      <p class="mega-label">Quick Links</p>
+      <div class="mega-links" id="megaQuick"></div>
+    </div>
+    <div>
+      <p class="mega-label">Shop</p>
+      <div class="mega-links" id="megaShop"></div>
+    </div>
+  </div>
+</div>
+
+<div class="utility-panel" id="searchPanel">
+  <div class="utility-content">
+    <input type="search" id="siteSearch" placeholder="Search apple.com">
+    <button id="closeSearch">✕</button>
+  </div>
+  <p class="suggestion-title">Quick Links</p>
+  <div class="suggestions">
+    <a href="#iphone">Explore iPhone</a>
+    <a href="#mac">Explore Mac</a>
+    <a href="#ipad">Explore iPad</a>
+    <a href="#watch">Explore Apple Watch</a>
+  </div>
+</div>
+
+<div class="utility-panel bag-panel" id="bagPanel">
+  <button class="close-panel" id="closeBag">✕</button>
+  <h3>Your bag is empty.</h3>
+  <p><a href="#store">Shop the latest products</a></p>
+  <p>Sign in to see if you have any saved items.</p>
+</div>
+
+<main id="top">
+
+  <!-- GIFTS FIRST -->
+  <section class="hero gifts-hero" id="store">
+    <div class="hero-content">
+      <h1>Gifts they’ll love.</h1>
+      <p>Find their perfect match this holiday.</p>
+      <div class="hero-actions">
+        <a class="blue-button" href="#products">Shop gifts</a>
+      </div>
+    </div>
+    <img class="hero-image gifts-image"
+      src="https://www.apple.com/v/homepage/images/holiday-2026/a/hero_holiday_2026_pink__bc2rstir59lu_large.jpg"
+      alt="Apple gifts">
+  </section>
+
+  <!-- IPHONE DUO SECOND -->
+  <section class="hero duo-hero" id="iphone">
+    <div class="hero-content">
+      <h1>iPhone Duo</h1>
+      <p>Hello, Hello.</p>
+      <div class="hero-actions">
+        <a class="blue-button" href="https://www.apple.com/iphone-duo/">Learn more</a>
+        <a class="outline-button" href="https://www.apple.com/iphone-duo/">Buy</a>
+      </div>
+    </div>
+    <img class="hero-image duo-image"
+      src="https://www.apple.com/v/homepage/images/iphone-duo/a/hero_iphone_duo_animated__ggqp9olf1ii6_large.jpg"
+      alt="iPhone Duo">
+  </section>
+
+  <!-- IPHONE 18 PRO -->
+  <section class="hero pro-hero" id="iphone-pro">
+    <div class="hero-content light-content">
+      <h1>iPhone 18 Pro</h1>
+      <p>Pro further.</p>
+      <div class="hero-actions">
+        <a class="blue-button" href="#products">Learn more</a>
+        <a class="outline-button" href="#products">Buy</a>
+      </div>
+    </div>
+    <img class="hero-image pro-image"
+      src="https://www.apple.com/v/homepage/images/iphone-18-pro/a/hero_iphone_18_pro__fqe1motd0ymy_large.jpg"
+      alt="iPhone 18 Pro">
+  </section>
+
+  <!-- PRODUCT GRID -->
+  <section class="product-grid" id="products">
+
+    <article class="product-card home-card" id="tv">
+      <div class="card-content">
+        <h2>Apple HomeView</h2>
+        <p>Designed for life at home.</p>
+        <div class="card-actions">
+          <a href="#products">Learn more</a>
+          <a href="#products">Buy</a>
+        </div>
+      </div>
+      <img src="https://www.apple.com/v/homepage/images/apple-homeview/a/promo_apple_homeview_animated__2tawhzlcoaau_large.jpg" alt="Apple HomeView">
+    </article>
+
+    <article class="product-card ipad-card" id="ipad">
+      <div class="card-content">
+        <h2>iPad</h2>
+        <p>Lovable. Drawable. Magical.</p>
+        <div class="card-actions">
+          <a href="#products">Learn more</a>
+          <a href="#products">Buy</a>
+        </div>
+      </div>
+      <img src="https://www.apple.com/v/homepage/images/ipad/a/promo_ipad__d9p5bux2okuq_large.jpg" alt="iPad">
+    </article>
+
+    <article class="product-card watch-card" id="watch">
+      <div class="card-content">
+        <h2>Apple Watch Series 12</h2>
+        <p>The most accurate heart rate sensing in a wearable.</p>
+        <div class="card-actions">
+          <a href="#products">Learn more</a>
+          <a href="#products">Buy</a>
+        </div>
+      </div>
+      <img src="https://www.apple.com/v/homepage/images/apple-watch-series-12/a/promo_apple_watch_series_12__gnlprtt8526a_large.jpg" alt="Apple Watch">
+    </article>
+
+    <article class="product-card airpods-card" id="airpods">
+      <div class="card-content">
+        <h2>AirPods Pro 3</h2>
+        <p>The world’s best in-ear Active Noise Cancellation.</p>
+        <div class="card-actions">
+          <a href="#products">Learn more</a>
+          <a href="#products">Buy</a>
+        </div>
+      </div>
+      <img src="https://www.apple.com/v/homepage/images/airpods-pro-3/a/promo_airpods_pro_3__e4755qofhnyq_large.jpg" alt="AirPods Pro 3">
+    </article>
+
+    <article class="product-card upgrade-card" id="upgrade">
+      <div class="card-content">
+        <h2>Apple Upgrade</h2>
+        <p>Love it. Lease it. Upgrade it.</p>
+        <div class="card-actions">
+          <a href="#products">Learn more</a>
+        </div>
+      </div>
+      <img src="https://www.apple.com/v/homepage/images/apple-upgrade/a/promo_apple_upgrade__jvn6udm4tx2e_large.jpg" alt="Apple Upgrade">
+    </article>
+
+    <article class="product-card card-card" id="accessories">
+      <div class="card-content">
+        <h2>Apple Card</h2>
+        <p>Get up to 3% Daily Cash back with every purchase.</p>
+        <div class="card-actions">
+          <a href="#products">Learn more</a>
+          <a href="#products">Apply now</a>
+        </div>
+      </div>
+      <img src="https://www.apple.com/v/homepage/images/apple-card/a/promo_apple_card__d8xz4kd4evwy_large.jpg" alt="Apple Card">
+    </article>
+
+  </section>
+
+  <!-- ENTERTAINMENT CAROUSEL -->
+  <section class="entertainment" id="entertainment">
+    <h2>Endless entertainment.</h2>
+    <p>Stories, shows, music and games. All in one place.</p>
+
+    <div class="carousel-wrap">
+      <button class="carousel-arrow prev" id="prevSlide">‹</button>
+
+      <div class="carousel-window">
+        <div class="carousel-track" id="carouselTrack">
+
+          <article class="ent-card">
+            <img src="https://images.unsplash.com/photo-1485846234645-a62644f84728?w=900" alt="Movies">
+            <div class="ent-overlay">
+              <span> tv</span>
+              <h3>Stories worth watching.</h3>
+              <a href="#footer">Stream now</a>
+            </div>
+          </article>
+
+          <article class="ent-card">
+            <img src="https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c?w=900" alt="Cinema">
+            <div class="ent-overlay">
+              <span> tv</span>
+              <h3>Discover your next favorite.</h3>
+              <a href="#footer">Stream now</a>
+            </div>
+          </article>
+
+          <article class="ent-card">
+            <img src="https://images.unsplash.com/photo-1516280440614-37939bbacd81?w=900" alt="Music">
+            <div class="ent-overlay">
+              <span> music</span>
+              <h3>Music for every moment.</h3>
+              <a href="#footer">Listen now</a>
+            </div>
+          </article>
+
+          <article class="ent-card">
+            <img src="https://images.unsplash.com/photo-1511512578047-dfb367046420?w=900" alt="Gaming">
+            <div class="ent-overlay">
+              <span> arcade</span>
+              <h3>Play something amazing.</h3>
+              <a href="#footer">Play now</a>
+            </div>
+          </article>
+
+          <article class="ent-card">
+            <img src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=900" alt="Live music">
+            <div class="ent-overlay">
+              <span> music</span>
+              <h3>Feel every beat.</h3>
+              <a href="#footer">Listen now</a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+
+      <button class="carousel-arrow next" id="nextSlide">›</button>
+    </div>
+
+    <div class="carousel-dots" id="carouselDots"></div>
+  </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer id="footer">
+  <div class="footer-note">
+    <p>‡ Apple services and features may not be available in all countries or regions.</p>
+    <p>Product availability, features, and specifications may vary by location.</p>
+  </div>
+
+  <div class="footer-columns">
+    <div>
+      <h4>Shop and Learn</h4>
+      <a href="#store">Store</a>
+      <a href="#mac">Mac</a>
+      <a href="#iphone">iPhone</a>
+      <a href="#ipad">iPad</a>
+      <a href="#watch">Apple Watch</a>
+      <a href="#airpods">AirPods</a>
+    </div>
+
+    <div>
+      <h4>Account</h4>
+      <a href="#footer">Manage Your Apple Account</a>
+      <a href="#footer">Apple Store Account</a>
+      <a href="#footer">iCloud.com</a>
+    </div>
+
+    <div>
+      <h4>Entertainment</h4>
+      <a href="#entertainment">Apple One</a>
+      <a href="#entertainment">Apple TV</a>
+      <a href="#entertainment">Apple Music</a>
+      <a href="#entertainment">Apple Arcade</a>
+    </div>
+
+    <div>
+      <h4>Apple Store</h4>
+      <a href="#footer">Find a Store</a>
+      <a href="#footer">Genius Bar</a>
+      <a href="#footer">Today at Apple</a>
+      <a href="#footer">Shopping Help</a>
+    </div>
+
+    <div>
+      <h4>About Apple</h4>
+      <a href="#footer">Newsroom</a>
+      <a href="#footer">Apple Leadership</a>
+      <a href="#footer">Career Opportunities</a>
+      <a href="#footer">Contact Apple</a>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>More ways to shop: <a href="#store">Find an Apple Store</a> or <a href="#footer">other retailer</a> near you.</p>
+    <div class="footer-legal">
+      <span>Copyright © 2026 Apple Inc. All rights reserved.</span>
+      <div>
+        <a href="#footer">Privacy Policy</a>
+        <a href="#footer">Terms of Use</a>
+        <a href="#footer">Legal</a>
+        <a href="#footer">Site Map</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="./script.js"></script>
+</body>
+</html>
